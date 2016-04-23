@@ -6,11 +6,13 @@ apt-get install -y linux-image-extra-$(uname -r)
 apt-get install -y apt-transport-https ca-certificates
 apt-get install -y build-essential libssl-dev
 apt-get install -y cowsay haveged
+apt-get install -y htop
 
 
 echo "Setup dev utilities"
 echo "==================="
 apt-get install -y git mercurial
+curl -s https://s3.amazonaws.com/download.draios.com/stable/install-sysdig | bash
 
 
 echo "Setup nodejs"
