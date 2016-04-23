@@ -1,4 +1,3 @@
-
 apply:
 	terraform apply
 

@@ -28,3 +28,8 @@ pip install autoenv virtualenvwrapper
 echo "Setup php"
 echo "==================="
 apt-get install -y php5-dev php5-curl php5-mcrypt php5-mysql
+
+
+echo "Setup vim"
+echo "==================="
+apt-get install -y vim-nox
