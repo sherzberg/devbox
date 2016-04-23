@@ -32,6 +32,13 @@ echo "==================="
 apt-get install -y php5-dev php5-curl php5-mcrypt php5-mysql
 
 
+echo "Setup go"
+echo "==================="
+wget https://storage.googleapis.com/golang/go1.6.2.linux-amd64.tar.gz
+tar -C /usr/local -xzf go1.6.2.linux-amd64.tar.gz
+echo "export PATH=$PATH:/usr/local/go/bin" > /etc/profile.d/golang.sh
+
+
 echo "Setup vim"
 echo "==================="
 apt-get install -y vim-nox
