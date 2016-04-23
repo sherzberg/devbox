@@ -4,9 +4,7 @@ resource "digitalocean_ssh_key" "default" {
 }
 
 resource "digitalocean_droplet" "devbox" {
-  image = "16944961"
-
-  /* image    = "ubuntu-16-04-x64" */
+  image    = "ubuntu-16-04-x64"
   name     = "dev-${count.index}"
   count    = "${var.instance_count}"
   region   = "nyc3"
