@@ -4,16 +4,14 @@ resource "digitalocean_ssh_key" "default" {
 }
 
 resource "digitalocean_droplet" "devbox" {
-  image    = "ubuntu-16-04-x64"
+  image = "16944961"
+
+  /* image    = "ubuntu-16-04-x64" */
   name     = "dev-${count.index}"
   count    = "${var.instance_count}"
-  region   = "nyc2"
+  region   = "nyc3"
   size     = "4gb"
   ssh_keys = ["${digitalocean_ssh_key.default.id}"]
-}
-
-resource "template_file" "setup" {
-  template = "${file("${path.module}/files/setup.sh")}"
 }
 
 resource "null_resource" "ssh" {
