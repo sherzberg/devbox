@@ -57,6 +57,12 @@ resource "null_resource" "workspace" {
       "mkdir -p workspace",
     ]
   }
+
+  provisioner "local-exec" {
+    inline = [
+      "cat ~/.ssh/id_rsa.pub | ssh -i id_rsa root@${element(digitalocean_droplet.devbox.*.ipv4_address, count.index} \"mkdir -p ~/.ssh; cat >> ~/.ssh/authorized_keys\""
+    ]
+  }
 }
 
 output "ips" {

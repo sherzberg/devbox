@@ -10,6 +10,7 @@ This cloud machine is intended to be ephermeral.
 ## Requirements
 
  - [Terraform](https://terraform.io/)
+ - [Packer](https://packer.io)
 
 ## Setup
 
@@ -18,6 +19,14 @@ We need to setup a private key to ssh with:
 ```bash
 $ ssh-keygen -f id_rsa -N=''
 ```
+
+We build a new snapshot with some software already installed with `packer`:
+
+```bash
+packer build packer-templates/digitalocean-basebox.json
+```
+
+Now replace the `do_image` variable in `variables.tf with the output from the packer build.
 
 ```bash
 $ terraform plan
